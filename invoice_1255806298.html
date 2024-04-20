@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>請求書</title>
+    <style>
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            text-align: center;
+            color: #0350B5;
+        }
+        .invoice-title {
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0350B5;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            color: #333;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .account-info {
+            background-color: #f8faff;
+            border: 1px solid #0350B5;
+            padding: 15px;
+            margin-top: 20px;
+            color: #0350B5;
+        }
+        .account-info-header {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .amount-due {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0350B5;
+            text-align: right;
+        }
+        .details-table, .totals-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .details-table th, .details-table td, .totals-table th, .totals-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .details-table th {
+            background-color: #0350B5;
+            color: white;
+        }
+        .totals-table {
+            margin-top: 10px;
+            border: none;
+        }
+        .totals-table td {
+            font-weight: bold;
+        }
+        .remark-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #f8faff;
+        }
+        .remark-box textarea {
+            width: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+        a {
+            color: #0350B5;
+        }
+        .header-info {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        /* Add new styles for the recommendation section */
+        .recommend-section {
+            margin-top: 10px;
+            background-color: #e8f0fe;
+            border-left: 5px solid #0350B5;
+            padding: 15px;
+        }
+        .recommend-title {
+            color: #0350B5;
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .recommend-text {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .recommend-link {
+            color: #307fe6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+            /* リンクにホバーした時のスタイル */
+        .recommend-link:hover {
+            color: #f44336; /* ホバー時のテキスト色 */
+            background-color: #ffcdd2; /* ホバー時の背景色 */
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <h1 class="invoice-title">請求書</h1>
+        <div class="flex-container">
+            <div>
+                <p>発行日：2024年4月5日</p>
+            </div>
+            <div class="header-info">
+                <p>請求書番号：1255806298<br>
+                お客さまコード：12345678</p>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <p>AAA税理士法人 様</p>
+            <div class="issuer-info">
+                <p>株式会社税務研究会<br>
+                〒100-0005　東京都千代田区<br>
+                丸の内 1-8-2 鉄鋼ビルディング<br>
+                登録番号：T9010001020855<br>
+                <a href="http://www.zeiken.co.jp">Website</a></p>
+            </div>
+        </div>
+
+        <p>毎度格別の御引立てを賜り、誠にありがとうございます。<br>
+        下記の通り御請求申し上げます。</p>
+
+        <p class="amount-due">ご請求金額：39,600円</p>
+
+        <div class="account-info">
+            <div class="account-info-header">お振込口座</div>
+            <div>
+                三井住友銀行　東京第一支店<br>
+                当座預金　9935687<br>
+                口座名　株式会社税務研究会
+            </div>
+        </div>
+
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>商品名</th>
+                    <th>数量</th>
+                    <th>単価</th>
+                    <th>期間</th>
+                    <th>税抜金額</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>税務通信</td>
+                    <td>1.0</td>
+                    <td>36,000</td>
+                    <td>2024/6〜2025/5</td>
+                    <td>36,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="totals-table">
+            <tbody>
+                <tr>
+                    <td>税抜合計（10％対象）</td>
+                    <td>36,000円</td>
+                </tr>
+                <tr>
+                    <td>消費税（10％）</td>
+                    <td>3,600円</td>
+                </tr>
+                <tr>
+                    <td>税込合計</td>
+                    <td>39,600円</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="remark-box">
+            <textarea rows="4" placeholder="備考"></textarea>
+        </div>
+
+        <!-- Insert a blue cut-off line after the remark box -->
+        <hr style="border: 1px dashed #0350B5; margin-top: 20px;">
+
+
+        <div class="flex-container" style="margin-top: 20px;">
+            <p>AAA税理士法人 様へ</p>
+        </div>
+
+        <div class="recommend-section">
+            <p class="recommend-title">＜おすすめセミナー＞　<a href="https://www.zeiken.co.jp/seminar/rs/detail/4867" class="recommend-link">令和６年度税制改正 企業税制のポイント集中解説</a></p>
+        </div>
+
+        <div class="recommend-section">
+            <p class="recommend-title">＜Pick Up News＞</p>
+            <p class="recommend-text">改正電子取引制度における国税当局の調査対応方針が明らかに</p>
+            <p>改正電子取引制度は昨年末までの2年間の猶予期間を経て、本年1月から電子取引データの電子保存が義務化された。国税庁は、全国税局に対し改正電子取引制度等の調査対応を指示。法人税等の調査において必要に応じて電子帳簿保存法の保存要件の適合性を判定するチェックシートを見直した。本年1月以後に授受した電子取引データの新たな猶予措置の適用などに係る国税当局の対応方針をQ＆A形式でお届けする。</p>
+        </div>
+
+        <!-- Insert a full-width seminar image -->
+
+        <div class="flex-container" style="margin-top: 20px;">
+            <p>お買い忘れはございませんか？</p>
+        </div>
+
+        <div>
+            <img src="https://www.zeiken.co.jp/books/houchiku/%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%83%93%E3%83%A5%E3%83%BC.png" alt="recommend books Seminar Image" style="width: 100%; height: auto; margin-top: 20px;">
+        </div>
+
+
+        <!-- Insert the company logo at the end of the invoice, right-aligned -->
+        <div style="text-align: right; margin-top: 40px;">
+            <img src="https://www.zeiken.co.jp/common/images/logo_header.png" alt="Company Logo" style="max-height: 100px;">
+        </div>
+
+
+    </div>
+</body>
+</html>
